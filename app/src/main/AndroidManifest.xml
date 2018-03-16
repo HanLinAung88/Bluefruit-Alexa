@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.adafruit.bluefruit.le.connect">
+    package="com.adafruit.bluefruit.le.connectAlexa">
 
     <uses-feature
         android:name="android.hardware.bluetooth_le"
@@ -53,7 +53,7 @@
             android:screenOrientation="fullUser">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.MainActivity" />
+                android:value="com.adafruit.bluefruit.le.connectAlexa.app.MainActivity" />
         </activity>
         <activity
             android:name=".app.InfoActivity"
@@ -62,7 +62,7 @@
             android:screenOrientation="fullUser">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.MainActivity" />
+                android:value="com.adafruit.bluefruit.le.connectAlexa.app.MainActivity" />
         </activity>
         <activity
             android:name=".app.CommonHelpActivity"
@@ -70,7 +70,7 @@
             android:screenOrientation="fullUser">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.InfoActivity" />
+                android:value="com.adafruit.bluefruit.le.connectAlexa.app.InfoActivity" />
         </activity>
         <activity
             android:name=".app.UartActivity"
@@ -79,7 +79,7 @@
             android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.MainActivity" />
+                android:value="com.adafruit.bluefruit.le.connectAlexa.app.MainActivity" />
         </activity>
         <activity
             android:name=".app.PinIOActivity"
@@ -87,7 +87,7 @@
             android:screenOrientation="fullUser">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.MainActivity" />
+                android:value="com.adafruit.bluefruit.le.connectAlexa.app.MainActivity" />
         </activity>
         <activity
             android:name=".app.ControllerActivity"
@@ -96,7 +96,7 @@
             android:screenOrientation="fullUser">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.MainActivity" />
+                android:value="com.adafruit.bluefruit.le.connectAlexa.app.MainActivity" />
         </activity>
         <activity
             android:name=".app.PadActivity"
@@ -105,7 +105,7 @@
             android:screenOrientation="fullUser">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.ControllerActivity" />
+                android:value="com.adafruit.bluefruit.le.connectAlexa.app.ControllerActivity" />
         </activity>
         <activity
             android:name=".app.settings.SettingsActivity"
@@ -131,7 +131,7 @@
             android:parentActivityName=".app.ControllerActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.ControllerActivity" />
+                android:value="com.adafruit.bluefruit.le.connectAlexa.app.ControllerActivity" />
         </activity>
         <activity
             android:name=".app.settings.MqttUartSettingsActivity"
@@ -139,7 +139,7 @@
             android:parentActivityName=".app.UartActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.UartActivity" />
+                android:value="com.adafruit.bluefruit.le.connectAlexa.app.UartActivity" />
         </activity>
         <activity
             android:name=".app.settings.MqttUartSettingsCodeReaderActivity"
@@ -148,7 +148,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.settings.MqttUartSettingsActivity" />
+                android:value="com.adafruit.bluefruit.le.connectAlexa.app.settings.MqttUartSettingsActivity" />
         </activity>
         <activity
             android:name=".app.neopixel.NeopixelActivity"
@@ -157,7 +157,7 @@
             android:screenOrientation="fullUser">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.MainActivity" />
+                android:value="com.adafruit.bluefruit.le.connectAlexa.app.MainActivity" />
         </activity>
         <activity
             android:name=".app.neopixel.NeopixelColorPickerActivity"
@@ -174,20 +174,33 @@
             android:screenOrientation="fullUser">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.adafruit.bluefruit.le.connect.app.neopixel.NeopixelActivity" />
+                android:value="com.adafruit.bluefruit.le.connectAlexa.app.neopixel.NeopixelActivity" />
         </activity>
-
 
         <provider
             android:name=".utils.LegacyCompatFileProvider"
-            android:authorities="com.adafruit.bluefruit.le.connect.fileprovider"
+            android:authorities="com.adafruit.bluefruit.le.connectAlexa.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
-
         </provider>
-    </application>
+
+        <service
+            android:name=".app.FireBaseService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".app.MessagingService"
+            android:exported="false">
+        <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT" />
+        </intent-filter>
+    </service>
+</application>
 
 </manifest>

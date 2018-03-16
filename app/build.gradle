@@ -5,7 +5,7 @@ android {
     buildToolsVersion '26.0.3'
 
     defaultConfig {
-        applicationId "com.adafruit.bluefruit.le.connect"
+        applicationId "com.adafruit.bluefruit.le.connectAlexa"
         minSdkVersion 19
         targetSdkVersion 25
         versionCode 19
@@ -42,9 +42,13 @@ dependencies {
     compile 'com.larswerkman:HoloColorPicker:1.4'
     compile 'com.android.support:design:26.1.0'
 
-    compile 'com.google.android.gms:play-services-analytics:11.6.2'
-    compile 'com.google.android.gms:play-services-location:11.6.2'
-    compile 'com.google.android.gms:play-services-vision:11.6.2'
+    compile 'com.google.android.gms:play-services-analytics:11.8.0'
+    compile 'com.google.android.gms:play-services-location:11.8.0'
+    compile 'com.google.android.gms:play-services-vision:11.8.0'
+
+    compile 'com.google.firebase:firebase-core:11.8.0'
+    compile 'com.google.firebase:firebase-messaging:11.8.0'
 
     compile 'com.commonsware.cwac:provider:0.5.1'
 }
+apply plugin: 'com.google.gms.google-services'

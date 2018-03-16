@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "245200826317",
+    "firebase_url": "https://alexarobot-a1637.firebaseio.com",
+    "project_id": "alexarobot-a1637",
+    "storage_bucket": "alexarobot-a1637.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245200826317:android:327f9c6eb2732268",
+        "android_client_info": {
+          "package_name": "com.adafruit.bluefruit.le.connectAlexa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "245200826317-at5mfcch3tjvbl077nsvt8458iiinsb8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpfvq21KVwzGcWdqlb_mVwcXZ7ZcoLL_A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

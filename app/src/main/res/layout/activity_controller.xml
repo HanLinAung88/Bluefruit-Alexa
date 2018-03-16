@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
 
-    tools:context="com.adafruit.bluefruit.le.connect.app.ControllerActivity">
+    tools:context="com.adafruit.bluefruit.le.connectAlexa.app.ControllerActivity">
 
 
     <LinearLayout
@@ -53,7 +53,7 @@
                 android:text="@string/controller_sectiontitle_stream"
                 android:textColor="@drawable/default_textcolor" />
 
-            <com.adafruit.bluefruit.le.connect.ui.utils.ExpandableHeightExpandableListView
+            <com.adafruit.bluefruit.le.connectAlexa.ui.utils.ExpandableHeightExpandableListView
                 android:id="@+id/controllerListView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -70,13 +70,25 @@
                 android:textColor="@drawable/default_textcolor" />
 
 
-            <com.adafruit.bluefruit.le.connect.ui.utils.ExpandableHeightListView
+            <com.adafruit.bluefruit.le.connectAlexa.ui.utils.ExpandableHeightListView
                 android:id="@+id/interfaceListView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:divider="#dddddd"
                 android:dividerHeight="1dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text = "Alexa Mode:"
+                android:textColor="@drawable/default_textcolor" />
+
+            <ToggleButton
+                android:id="@+id/alexaMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
         </LinearLayout>
 
     </ScrollView>
